@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - faisal hamdani</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">faisal</div>
+            <div class="nav-links">
+                <a data-section="home" class="active">Home</a>
+                <a data-section="about">About</a>
+                <a data-section="projects">Projects</a>
+                <a data-section="skills">Skills</a>
+                <a data-section="contact">Contact</a>
+            </div>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+
+        <main id="main-content">
+
+            <!-- HOME -->
+            <section id="home" class="content-section active">
+                <div class="hologram-container">
+                    <div class="hero-content">
+                        <h1>Hi, I'm faisal hamdani</h1>
+                        <h2>I'M A <span class="typewriter-text"></span></h2>
+                        <p>Saya seorang pelajar di SMK YAPPRI SUMEDANG</p>
+
+                        <a href="#" class="btn">Hire me</a>
+
+                        <div class="social-links">
+                            <a href="https://wa.me/6283195107939" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://instagram.com/sall_wkwk" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="profile-image">
+                        <div class="profile-circle">
+                            <img src="nobita.png" alt="Profile">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT -->
+            <section id="about" class="content-section">
+                <div class="hologram-container">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h3>Early Years</h3>
+                            <p>Started coding at age 16.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>Education</h3>
+                            <p>Computer Science student.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h3>Present</h3>
+                            <p>Building modern web projects.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects" class="content-section">
+                <div class="hologram-container">
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>AI Image Generator</h3>
+                            <p>Generate images from text.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>Smart Home</h3>
+                            <p>IoT automation system.</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>Blockchain Wallet</h3>
+                            <p>Secure crypto wallet.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SKILLS -->
+            <section id="skills" class="content-section">
+                <div class="hologram-container">
+                    <div class="skills-grid">
+
+                        <div class="skill-category">
+                            <h3>Skills</h3>
+                            <ul class="skill-list">
+                                <li>HTML
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 80%;"></div>
+                                    </div>
+                                </li>
+                                <li>JavaScript
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 70%;"></div>
+                                    </div>
+                                </li>CSS
+                                <li>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 75%;"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Hobby</h3>
+                            <ul class="skill-list">
+                                <li>MAEN FF
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 95%;"></div>
+                                    </div>
+                                </li>
+                                <li>NGUREK
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%;"></div>
+                                    </div>
+                                </li>
+                                <li>NGUSEP
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%;"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact" class="content-section">
+                <div class="hologram-container">
+                    <div class="contact-container">
+                        <h2>Contact Me</h2>
+
+                        <form>
+                            <input type="text" placeholder="Nama kamu" required>
+                            <input type="email" placeholder="Email kamu" required>
+                            <textarea placeholder="Pesan kamu..." required></textarea>
+                            <button type="submit" class="btn">Kirim</button>
+                        </form>
+
+                        <div class="contact-info">
+                            <p>📱 <a href="https://wa.me/6283195107939" target="_blank">WhatsApp</a></p>
+                            <p>📸 <a href="https://instagram.com/sall_wkwk" target="_blank">Instagram</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

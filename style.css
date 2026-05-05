@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root {
+    --primary: #00ffff;
+    --dark: #0a192f;
+    --light: #ffffff;
+    --gray: #8892b0;
+    --glow-color: rgba(0, 255, 255, 0.6);
+}
+
+body {
+    background-image: url("background.jpg");
+    color: var(--light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ================= NAVIGATION ================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 24px;
+    font-weight: bold;
+    transition: text-shadow 0.3s ease;
+}
+
+.logo:hover {
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+.menu-btn {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ================= HOLOGRAM ================= */
+@keyframes hologramFlicker {
+    0% { opacity: 0.97; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0.97; }
+}
+
+@keyframes hologramScan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+.hologram-container {
+    position: relative;
+    background: rgba(0, 255, 255, 0.05);
+    padding: 5%;
+    margin: 20px 0;
+    overflow: hidden;
+    animation: hologramFlicker 2s infinite;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    z-index: 1;
+}
+
+.hologram-container::before,
+.hologram-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.hologram-container::before {
+    background: linear-gradient(transparent, rgba(0,255,255,0.2), transparent);
+    animation: hologramScan 2s linear infinite;
+}
+
+.hologram-container::after {
+    border: 1px solid rgba(0,255,255,0.3);
+}
+
+/* ================= CONTENT ================= */
+.content-section {
+    display: none;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.content-section.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ================= HERO ================= */
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.hero-content h2 {
+    color: var(--primary);
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.hero-content p {
+    color: var(--gray);
+    margin-bottom: 32px;
+    max-width: 500px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: var(--primary);
+    color: var(--dark);
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--glow-color);
+}
+
+/* ================= PROJECT (FIXED) ================= */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.project-card {
+    border: 1px solid var(--primary);
+    background: rgba(0,255,255,0.05);
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--glow-color);
+}
+
+/* ================= SKILL (FIXED) ================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+}
+
+.skill-category {
+    border: 1px solid rgba(0,255,255,0.3);
+    background: rgba(0,255,255,0.03);
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+.skill-category h3 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.skill-list li {
+    margin-bottom: 15px;
+}
+
+.skill-bar {
+    height: 10px;
+    background: rgba(0,255,255,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--glow-color);
+}
+
+/* ================= CONTACT (FIXED + WORKING CLICK) ================= */
+.contact-container {
+    flex: 1;
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid var(--primary);
+    background: rgba(0,255,255,0.05);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+}
+
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-container input,
+.contact-container textarea {
+    padding: 12px;
+    border: 1px solid var(--primary);
+    background: rgba(0,255,255,0.08);
+    color: var(--light);
+    border-radius: 8px;
+    outline: none;
+}
+
+.contact-container input:focus,
+.contact-container textarea:focus {
+    box-shadow: 0 0 10px var(--glow-color);
+}
+
+.contact-container .btn {
+    width: 100%;
+}
+
+.contact-info {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.contact-info a {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    color: var(--light);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-info a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px var(--glow-color);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .hologram-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+}
