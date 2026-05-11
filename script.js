@@ -39,7 +39,7 @@
 
 
         const texts = [
-            "SI COWOK DARI PASEH"
+            "DEVLOVER"
         ]
         
         let speed = 100;
