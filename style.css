@@ -1,15 +1,4 @@
-Baik, ini adalah file CSS lengkap (Full Code) yang sudah dirapikan dan dipadukan dengan semua bagian yang kita bahas sebelumnya (Home, About, Projects, Skills, Jasa, Contact).
 
-Saya juga menambahkan beberapa perbaikan penting:
-1.  **Image Profile:** CSS untuk tampilan foto profil (nobita.png) dengan efek *glowing* dan *floating*.
-2.  **Typewriter:** CSS untuk efek mengetik otomatis pada Home.
-3.  **About:** CSS untuk tampilan timeline/garis waktu.
-4.  **Perbaikan Bug Skill:** Saya perbaiki struktur CSS di bagian `li` agar tampilan skill kamu yang ke-3 (CSS) tidak rusak.
-5.  **Responsive:** Tata letak yang rapi di HP.
-
-Simpan kode ini sebagai `style.css`.
-
-```css
 /* ================= RESET & BASIC SETUP ================= */
 * {
     margin: 0;
