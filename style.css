@@ -445,7 +445,7 @@ nav {
     100% { transform: translateX(100%); }
 }
 
-/* ================= JASA ================= */
+/* ================= JASA (UPDATED COLOR TO MATCH SKILLS) ================= */
 .jasa-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -454,30 +454,39 @@ nav {
 }
 
 .jasa-category {
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    background: rgba(10, 25, 47, 0.7); /* Background gelap seperti Skill */
     padding: 30px;
-    border-radius: 15px;
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* Garis aksen di samping kiri (Sama seperti Skill) */
+.jasa-category::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 4px; height: 100%;
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--glow-color);
 }
 
 .jasa-category:hover {
+    transform: translateY(-8px);
     border-color: var(--primary);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.15);
-    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
 }
 
 .jasa-category h3 {
     color: var(--primary);
     text-align: center;
+    margin-bottom: 25px;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 1.5rem;
-    margin-bottom: 30px;
-    border-bottom: 1px dashed rgba(0, 255, 255, 0.3);
-    padding-bottom: 15px;
-    text-shadow: 0 0 8px var(--glow-color);
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
 }
 
 .jasa-list {
@@ -485,41 +494,53 @@ nav {
 }
 
 .jasa-list li {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.jasa-list li > span { /* Target span jika ada, atau text langsung */
+/* Label Nama Jasa */
+.jasa-list li > span {
     display: block;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: bold;
     margin-bottom: 8px;
     color: var(--light);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
     text-transform: capitalize;
 }
 
 .jasa-bar {
-    height: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    height: 10px; /* Tinggi bar disamakan dengan Skill */
+    background: rgba(0, 255, 255, 0.1); /* Warna background bar disamakan */
+    border-radius: 5px;
     overflow: hidden;
     position: relative;
 }
 
 .jasa-progress {
     height: 100%;
-    background: var(--primary);
-    border-radius: 4px;
+    background: var(--primary); /* Warna inti disamakan dengan Skill */
+    border-radius: 5px;
     position: relative;
     transition: width 1.2s ease-out;
-    box-shadow: 0 0 10px var(--glow-color);
+    box-shadow: 0 0 10px var(--glow-color); /* Efek glow disamakan */
 }
 
-/* Warna spesifik untuk setiap jasa */
-.jasa-progress[style*="65%"] { background: #ffcc00; box-shadow: 0 0 10px rgba(255, 204, 0, 0.6); }
-.jasa-progress[style*="50%"] { background: #00ffaa; box-shadow: 0 0 10px rgba(0, 255, 170, 0.6); }
-.jasa-progress[style*="70%"] { background: #ff0055; box-shadow: 0 0 10px rgba(255, 0, 85, 0.6); }
+/* Efek Kilauan (Shimmer) Sama persis dengan Skill */
+.jasa-progress::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.6),
+        transparent
+    );
+    transform: translateX(-100%);
+    animation: skillShimmer 2.5s infinite;
+}
 
 /* ================= CONTACT ================= */
 .contact-container {
