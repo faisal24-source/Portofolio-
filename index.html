@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - faisal hamdani</title>
+    <!-- Link ke Font Awesome (Ikon) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Link ke File CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,8 +20,8 @@
                 <a data-section="about">About</a>
                 <a data-section="projects">Projects</a>
                 <a data-section="skills">Skills</a>
-                <a data-section="contact">Contact</a>
                 <a data-section="jasa">Jasa</a>
+                <a data-section="contact">Contact</a>
             </div>
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
@@ -36,7 +38,9 @@
                         <h2>I'M A <span class="typewriter-text"></span></h2>
                         <p>Saya seorang pelajar di SMK YAPPRI SUMEDANG</p>
 
-                        <a href="#" class="btn">Hire me</a>
+                        <!-- Tombol "Lihat Jasa" sudah dihapus sesuai permintaan -->
+                        <!-- Tombol Hire Me tetap ada -->
+                        <a href="#contact" class="btn" onclick="navigateTo('contact')">Hire Me</a>
 
                         <div class="social-links">
                             <a href="https://wa.me/6283195107939" target="_blank">
@@ -50,7 +54,8 @@
 
                     <div class="profile-image">
                         <div class="profile-circle">
-                            <img src="nobita.png" alt="Profile">
+                            <!-- Pastikan file gambar ada atau ganti URL -->
+                            <img src="nobita.png" alt="Profile" onerror="this.src='https://picsum.photos/seed/nobita/200/200'">
                         </div>
                     </div>
                 </div>
@@ -59,6 +64,7 @@
             <!-- ABOUT -->
             <section id="about" class="content-section">
                 <div class="hologram-container">
+                    <h2 style="text-align:center; margin-bottom:20px;">About Me</h2>
                     <div class="about-grid">
                         <div class="timeline-item">
                             <h3>Early Years</h3>
@@ -79,6 +85,7 @@
             <!-- PROJECTS -->
             <section id="projects" class="content-section">
                 <div class="hologram-container">
+                    <h2 style="text-align:center; margin-bottom:20px;">My Projects</h2>
                     <div class="projects-grid">
                         <div class="project-card">
                             <h3>AI Image Generator</h3>
@@ -99,22 +106,22 @@
             <!-- SKILLS -->
             <section id="skills" class="content-section">
                 <div class="hologram-container">
+                    <h2 style="text-align:center; margin-bottom:20px;">My Skills & Hobbies</h2>
                     <div class="skills-grid">
-
                         <div class="skill-category">
                             <h3>Skills</h3>
                             <ul class="skill-list">
-                                <li>HTML
+                                <li style="margin-bottom:10px;">HTML
                                     <div class="skill-bar">
                                         <div class="skill-progress" style="width: 80%;"></div>
                                     </div>
                                 </li>
-                                <li>JavaScript
+                                <li style="margin-bottom:10px;">JavaScript
                                     <div class="skill-bar">
                                         <div class="skill-progress" style="width: 70%;"></div>
                                     </div>
-                                </li>CSS
-                                <li>
+                                </li>
+                                <li style="margin-bottom:10px;">CSS
                                     <div class="skill-bar">
                                         <div class="skill-progress" style="width: 75%;"></div>
                                     </div>
@@ -125,17 +132,17 @@
                         <div class="skill-category">
                             <h3>Hobby</h3>
                             <ul class="skill-list">
-                                <li>MAEN FF
+                                <li style="margin-bottom:10px;">MAEN FF
                                     <div class="skill-bar">
                                         <div class="skill-progress" style="width: 95%;"></div>
                                     </div>
                                 </li>
-                                <li>NGUREK
+                                <li style="margin-bottom:10px;">NGUREK
                                     <div class="skill-bar">
                                         <div class="skill-progress" style="width: 90%;"></div>
                                     </div>
                                 </li>
-                                <li>NGUSEP
+                                <li style="margin-bottom:10px;">NGUSEP
                                     <div class="skill-bar">
                                         <div class="skill-progress" style="width: 85%;"></div>
                                     </div>
@@ -146,16 +153,53 @@
                 </div>
             </section>
 
+            <!-- JASA (SERVICES) -->
+            <section id="jasa" class="content-section">
+                <div class="hologram-container">
+                    <h2 style="text-align:center; margin-bottom:30px;">Pricing & Services</h2>
+                    <div class="jasa-grid">
+
+                        <!-- Jasa 1 -->
+                        <div class="jasa-card">
+                            <div class="jasa-icon"><i class="fas fa-gamepad"></i></div>
+                            <div class="jasa-title">Joki Rank FF</div>
+                            <div class="jasa-desc">Joki Rank sampai Master/Grandmaster dengan cepat dan aman. Akun aman.</div>
+                            <div class="jasa-price">Rp 50.000 <span>/ rank</span></div>
+                            <button onclick="orderViaWA('Joki Rank FF')" class="btn">Pesan Sekarang</button>
+                        </div>
+
+                        <!-- Jasa 2 -->
+                        <div class="jasa-card">
+                            <div class="jasa-icon"><i class="fas fa-code"></i></div>
+                            <div class="jasa-title">Bantu Ngoding</div>
+                            <div class="jasa-desc">Bantuan mengerjakan tugas web sekolah atau proyek sederhana HTML/CSS/JS.</div>
+                            <div class="jasa-price">Rp 30.000 <span>/ project</span></div>
+                            <button onclick="orderViaWA('Bantu Ngoding')" class="btn">Pesan Sekarang</button>
+                        </div>
+
+                        <!-- Jasa 3 -->
+                        <div class="jasa-card">
+                            <div class="jasa-icon"><i class="fas fa-camera"></i></div>
+                            <div class="jasa-title">Jasa Foto</div>
+                            <div class="jasa-desc">Fotografi untuk keperluan profil, acara sekolah, atau edit foto sederhana.</div>
+                            <div class="jasa-price">Rp 25.000 <span>/ sesi</span></div>
+                            <button onclick="orderViaWA('Jasa Foto')" class="btn">Pesan Sekarang</button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
             <!-- CONTACT -->
             <section id="contact" class="content-section">
                 <div class="hologram-container">
                     <div class="contact-container">
-                        <h2>Contact Me</h2>
+                        <h2 style="text-align:center;">Contact Me</h2>
 
-                        <form>
+                        <form onsubmit="event.preventDefault(); alert('Pesan terkirim! (Simulasi)');">
                             <input type="text" placeholder="Nama kamu" required>
                             <input type="email" placeholder="Email kamu" required>
-                            <textarea placeholder="Pesan kamu..." required></textarea>
+                            <textarea placeholder="Pesan kamu..." rows="4" required></textarea>
                             <button type="submit" class="btn">Kirim</button>
                         </form>
 
@@ -167,36 +211,76 @@
                 </div>
             </section>
 
-           <!-- JASA -->
-            <section id="jasa" class="content-section">
-                <div class="hologram-container">
-                    <div class="jasa-grid">
+        </main>
+    </div>
 
-                        <div class="jasa-category">
-                            <h3>Jasa</h3>
-                            <ul class="jasa-list">
-                                <li>joki ff
-                                    <div class="jasa-bar">
-                                        <div class="jasa-progress" style="width: 65%;"></div>
-                                    </div>
-                                </li>
-                                <li>bantu ngoding
-                                    <div class="jasa-bar">
-                                        <div class="jasa-progress" style="width: 50%;"></div>
-                                    </div>
-                                </li>
-                                <li>jasa foto
-                                    <div class="jasa-bar">
-                                        <div class="jasa-progress" style="width: 70%;"></div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                     </div>
-                </div>
-            </section>
-               
-    <script src="script.js"></script>
+    <!-- Script Javascript -->
+    <script>
+        // --- NAVIGATION LOGIC ---
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('.content-section');
+        const menuBtn = document.querySelector('.menu-btn');
+        const navMenu = document.querySelector('.nav-links');
+
+        // Function to switch sections
+        function navigateTo(sectionId) {
+            // Remove active class from all links and sections
+            navLinks.forEach(link => link.classList.remove('active'));
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            // Add active class to clicked link and target section
+            const activeLink = document.querySelector(`[data-section="${sectionId}"]`);
+            const activeSection = document.getElementById(sectionId);
+            
+            if(activeLink) activeLink.classList.add('active');
+            if(activeSection) activeSection.classList.add('active');
+
+            // Close mobile menu if open
+            navMenu.classList.remove('active');
+        }
+
+        // Event Listeners for Navigation
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                const sectionId = link.getAttribute('data-section');
+                navigateTo(sectionId);
+            });
+        });
+
+        // Mobile Menu Toggle
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // --- WHATSAPP ORDER FUNCTION ---
+        function orderViaWA(serviceName) {
+            const phoneNumber = "6283195107939"; 
+            const message = `Halo Faisal, saya tertarik dengan jasa "${serviceName}". Apakah masih tersedia?`;
+            const encodedMessage = encodeURIComponent(message);
+            const waURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            window.open(waURL, '_blank');
+        }
+
+        // --- TYPEWRITER EFFECT (Simple version) ---
+        const textElement = document.querySelector('.typewriter-text');
+        const texts = ["Web Developer", "Student", "Gamer"];
+        let count = 0;
+        let index = 0;
+
+        function typeWriter() {
+            if (index === texts.length) {
+                index = 0;
+            }
+            const currentText = texts[index];
+            textElement.textContent = currentText;
+            index++;
+            setTimeout(typeWriter, 2000); // Ganti teks setiap 2 detik
+        }
+        
+        // Start Typewriter
+        typeWriter();
+    </script>
 </body>
 
 </html>
