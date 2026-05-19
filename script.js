@@ -39,7 +39,7 @@
 
 
         const texts = [
-            "DEVLOVER"
+            "SI COWOK BAIKK"
         ]
         
         let speed = 100;
